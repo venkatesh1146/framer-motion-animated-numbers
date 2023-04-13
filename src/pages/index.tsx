@@ -1,5 +1,6 @@
 import AnimatedRollingNumber from '@/RollingNumbers';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 
 const zoomOut = {
@@ -25,6 +26,7 @@ const zoomOut = {
 };
 
 export default function Home() {
+
   return (
     <div style={{height:"100vh",width:"100vw",display:"flex",justifyContent:"center",alignItems:"center"}}>
       <motion.div
@@ -38,8 +40,8 @@ export default function Home() {
         initial="hidden"
         animate="visible"
         exit="exit">
+         <AnimatedRollingNumber amount={45678} />
       </motion.div>
-          <AnimatedRollingNumber amount={45678} />
     </div>
   )
 }
